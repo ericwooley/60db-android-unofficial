@@ -1,10 +1,10 @@
 <?xml version='1.0' encoding='utf-8'?>
 <widget id="io.cordova.hellocordova" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
-    <name>HelloCordova</name>
+    <name>60db unofficial</name>
     <description>
-        A sample Apache Cordova application that responds to the deviceready event.
+        A simple app wrapper for 60db
     </description>
-    <author email="dev@cordova.apache.org" href="http://cordova.io">
+    <author email="ericwooley@gmail.com" href="http://ericwooley.github.io">
         Apache Cordova Team
     </author>
     <content src="https://60db.co" />
@@ -22,20 +22,17 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="android">
-        <!--
-            ldpi    : 36x36 px
-            mdpi    : 48x48 px
-            hdpi    : 72x72 px
-            xhdpi   : 96x96 px
-            xxhdpi  : 144x144 px
-            xxxhdpi : 192x192 px
-        -->
-        <icon src="res/android/ldpi.png" density="ldpi" />
-        <icon src="res/android/mdpi.png" density="mdpi" />
-        <icon src="res/android/hdpi.png" density="hdpi" />
-        <icon src="res/android/xhdpi.png" density="xhdpi" />
-        <icon src="res/android/xxhdpi.png" density="xxhdpi" />
-        <icon src="res/android/xxxhdpi.png" density="xxxhdpi" />
+		<icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
+		<icon qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
+		<icon qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
+		<icon qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png"/>
+		<icon qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
+		<icon qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
+
+		<splash qualifier="ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
+		<splash qualifier="mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
+		<splash qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
+		<splash qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
     </platform>
     <plugin name="cordova-plugin-remote-injection" spec="~0.4.0" />
     <preference name="CRIInjectFirstFiles" value="www/js/init.js" />
