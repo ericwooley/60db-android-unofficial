@@ -68,22 +68,74 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
-/***/ (function(module, exports, __webpack_require__) {
+/***/ (function(module, exports) {
 
-"use strict";
-
-Object.defineProperty(exports, "__esModule", { value: true });
 var interval = setInterval(function () {
     if (window.cordova) {
         clearInterval(interval);
         window.open = window.cordova.InAppBrowser.open;
+        intializePlayerControls();
     }
 }, 100);
-window.pause = function () {
-    var playDomNode = document.querySelector('#root > div > div.style__listContainer___1Mr3c > div.style__playerOverlay___3pgyT > div.style__playerBar___1SW-J > div > div > div.style__top___3pOgn > div.style__playerButton___iXq40.style__container___Nm3LT > div > svg');
-    console.log('playDomNode', playDomNode);
+function intializePlayerControls() {
+    var MusicControls = window.MusicControls;
+    var controls = MusicControls.create({
+        track: '60db',
+        // artist: 'Muse',                     // optional, default : ''
+        // cover: 'albums/absolution.jpg',      // optional, default : nothing
+        // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
+        //           or a remote url ('http://...', 'https://...', 'ftp://...')
+        isPlaying: isPlaying(),
+        dismissable: true,
+        // hide previous/next/close buttons:
+        hasPrev: false,
+        hasNext: false,
+        hasClose: true,
+    }, function () {
+        console.log('success');
+    }, function () {
+        console.log('failure');
+    });
+    setInterval(function () { return MusicControls.updateIsPlaying(isPlaying()); }, 100);
+    function events(action) {
+        switch (action) {
+            case 'music-controls-pause':
+                if (isPlaying()) {
+                    togglePlayback();
+                }
+                break;
+            case 'music-controls-play':
+                if (!isPlaying()) {
+                    togglePlayback();
+                }
+                break;
+            case 'music-controls-destroy':
+                MusicControls.destroy(function () {
+                    navigator.app.exitApp();
+                }, function () {
+                    alert('error closing app');
+                });
+                break;
+        }
+    }
+    // Register callback
+    MusicControls.subscribe(events);
+    // Start listening for events
+    // The plugin will run the events function each time an event is fired
+    MusicControls.listen();
+}
+function getPlayButton() {
+    return document.querySelector('#root > div > div.style__listContainer___1Mr3c > div.style__playerOverlay___3pgyT > div.style__playerBar___1SW-J > div > div > div.style__top___3pOgn > div.style__playerButton___iXq40.style__container___Nm3LT > div > svg');
+}
+function isPlaying() {
+    var path = document.querySelector('#root > div > div.style__listContainer___1Mr3c > div.style__playerOverlay___3pgyT > div.style__playerBar___1SW-J > div > div > div.style__top___3pOgn > div.style__playerButton___iXq40.style__container___Nm3LT > div > svg > path');
+    return !!path && path.getAttribute('d').indexOf('M8') !== 0;
+}
+window.isPlaying = isPlaying;
+function togglePlayback() {
+    var playDomNode = getPlayButton();
     window.cordova.plugins.Focus.focus(playDomNode);
-};
+}
 
 
 /***/ })
