@@ -1,4 +1,4 @@
-<?xml version='0.0.1' encoding='utf-8'?>
+<?xml version='1.0' encoding='utf-8'?>
 <widget id="com.ericwooley.sixtydb" version="1.0.0" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
     <name>60db unofficial</name>
     <description>
@@ -22,20 +22,20 @@
         <allow-intent href="market:*" />
     </platform>
     <platform name="android">
-		<icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png"/>
-		<icon qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png"/>
-		<icon qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png"/>
-		<icon qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png"/>
-		<icon qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png"/>
-		<icon qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png"/>
-
-		<splash qualifier="ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
-		<splash qualifier="mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
-		<splash qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
-		<splash qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
+        <icon qualifier="ldpi" src="res/icons/android/icon-36-ldpi.png" />
+        <icon qualifier="mdpi" src="res/icons/android/icon-48-mdpi.png" />
+        <icon qualifier="hdpi" src="res/icons/android/icon-72-hdpi.png" />
+        <icon qualifier="xhdpi" src="res/icons/android/icon-96-xhdpi.png" />
+        <icon qualifier="xxhdpi" src="res/icons/android/icon-144-xxhdpi.png" />
+        <icon qualifier="xxxhdpi" src="res/icons/android/icon-192-xxxhdpi.png" />
+        <splash qualifier="ldpi" src="res/screens/android/screen-ldpi-portrait.png" />
+        <splash qualifier="mdpi" src="res/screens/android/screen-mdpi-portrait.png" />
+        <splash qualifier="hdpi" src="res/screens/android/screen-hdpi-portrait.png" />
+        <splash qualifier="xhdpi" src="res/screens/android/screen-xhdpi-portrait.png" />
     </platform>
     <plugin name="cordova-plugin-remote-injection" spec="~0.4.0" />
     <preference name="CRIInjectFirstFiles" value="www/js/init.js" />
     <plugin name="cordova-plugin-inappbrowser" spec="~1.6.1" />
     <plugin name="fr._46cl.focus" spec="https://github.com/46cl/cordova-android-focus-plugin" />
+    <plugin name="cordova-plugin-music-controls" spec="https://github.com/homerours/cordova-music-controls-plugin" />
 </widget>
