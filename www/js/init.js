@@ -82,7 +82,7 @@ function intializePlayerControls() {
     var controls = MusicControls.create({
         track: '60db',
         // artist: 'Muse',                     // optional, default : ''
-        // cover: 'albums/absolution.jpg',      // optional, default : nothing
+        cover: 'img/logo.png',
         // cover can be a local path (use fullpath 'file:///storage/emulated/...', or only 'my_image.jpg' if my_image.jpg is in the www folder of your app)
         //           or a remote url ('http://...', 'https://...', 'ftp://...')
         isPlaying: isPlaying(),
