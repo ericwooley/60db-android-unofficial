@@ -1,0 +1,24 @@
+{
+  "name": "60db",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+     "watch": "webpack --watch"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@types/react-addons-test-utils": "^0.14.17",
+    "react": "^15.4.2",
+    "react-addons-test-utils": "^15.4.2",
+    "react-dom": "^15.4.2"
+  },
+  "devDependencies": {
+    "ts-loader": "^2.0.0",
+    "typescript": "^2.3.0-dev.20170218",
+    "typings": "^2.1.0",
+    "webpack": "^2.2.1"
+  }
+}
