@@ -1,0 +1,3 @@
+#!/bin/sh
+# rename this to release.sh
+cordova run android --release -- --keystore=./release.keystore --storePassword=<yourpassword> --alias=60dbrelease --password=<same as other>

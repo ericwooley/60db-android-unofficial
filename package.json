@@ -1,11 +1,14 @@
 {
   "name": "60db",
-  "version": "1.0.0",
+  "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-     "watch": "webpack --watch"
+     "watch": "webpack --watch",
+     "build": "npm run build:js && ./release.sh",
+     "build:js": "webpack",
+     "build:run": "webpack && cordova emulate android"
   },
   "author": "",
   "license": "ISC",
