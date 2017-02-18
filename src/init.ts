@@ -62,11 +62,11 @@ function intializePlayerControls() {
 }
 
 function getPlayButton () {
-	return document.querySelector('#root > div > div.style__listContainer___1Mr3c > div.style__playerOverlay___3pgyT > div.style__playerBar___1SW-J > div > div > div.style__top___3pOgn > div.style__playerButton___iXq40.style__container___Nm3LT > div > svg')
+	return document.querySelector('[class*="playerButton"] > div > svg')
 }
 
 function isPlaying () {
-	const path = document.querySelector('#root > div > div.style__listContainer___1Mr3c > div.style__playerOverlay___3pgyT > div.style__playerBar___1SW-J > div > div > div.style__top___3pOgn > div.style__playerButton___iXq40.style__container___Nm3LT > div > svg > path')
+	const path = document.querySelector('[class*="playerButton"] > div > svg > path')
 	return !!path && path.getAttribute('d').indexOf('M8') !== 0
 }
 (window as any).isPlaying = isPlaying
