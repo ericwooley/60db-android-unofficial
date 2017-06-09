@@ -1,3 +1,7 @@
+# Depricated, the android beta is better.
+https://play.google.com/store/apps/details?id=com.tinygaragelabs&hl=en
+
+
 # 60db-android-unofficial
 Unofficial android app for 60db
 
